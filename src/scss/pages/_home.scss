@@ -29,18 +29,10 @@
     h1 {
       @include toRem(font-size, 48);
       @include toRem(margin-bottom, 30);
-
-      @media screen and (max-width: 767px) {
-        @include toRem(font-size, 40);
-      }
     }
 
     p {
       @include toRem(font-size, 16);
-
-      @media screen and (max-width: 767px) {
-        @include toRem(font-size, 20);
-      }
 
       + p {
         @include toRem(margin-top, 16);
@@ -77,10 +69,6 @@
 
     @include spaceToRem(padding, 14, 20);
     cursor: pointer;
-
-    @media screen and (max-width: 767px) {
-      @include toRem(font-size, 17);
-    }
 
     @media (hover: hover) {
       &:hover:after {

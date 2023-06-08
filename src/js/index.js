@@ -22,3 +22,13 @@ const scroll = new LocomotiveScroll({
     breakpoint: 1024,
   },
 });
+
+setTimeout(() => {
+  scroll.destroy();
+}, 0);
+setTimeout(() => {
+  scroll.init();
+}, 50);
+setTimeout(() => {
+  scroll.update();
+}, 1000);

@@ -32,7 +32,7 @@
   @include toRem(width, 50);
 
   @media screen and (max-width: 767px) {
-  @include toRem(width, 32);
+    @include toRem(width, 32);
   }
 
   position: fixed;
@@ -78,7 +78,7 @@
   width: 100%;
   bottom: 0px;
   left: 0;
-  z-index: 99;
+  z-index: 102;
   background-color: black;
   border-top: 1px solid #d9d9d9;
 }

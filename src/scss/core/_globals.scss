@@ -17,6 +17,7 @@ html {
 }
 
 body {
+  overflow-x: hidden;
   @include spaceToRem(padding, 60, 50);
 
   @media screen and (max-width: 767px) {

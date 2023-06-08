@@ -3,8 +3,9 @@
   @include toRem(padding-left, 50);
   @include toRem(padding-right, 50);
 
-  height: 100%;
-  @include toRem(margin-top, 120);
+  // min-height: 90vh;
+  @include toRem(margin-top, 100);
+  @include toRem(margin-bottom, 40);
 
   display: flex;
   align-items: center;
@@ -19,10 +20,10 @@
     @include toRem(font-size, 32);
     @include toRem(padding-left, 32);
     @include toRem(padding-right, 32);
-    @include toRem(margin-top, 60);
+    @include toRem(margin-top, 50);
+    @include toRem(margin-bottom, 50);
 
     flex-direction: column-reverse;
-    gap: 64px;
   }
 
   &__content {
@@ -188,30 +189,17 @@
 }
 
 .usecase__text {
-  height: 40vh;
+  height: 50vh;
+  z-index: 101;
+  position: relative;
+  // overflow: hidden;
 }
 
 .c-direction-block {
   position: absolute;
   right: 0;
   left: 0;
-  z-index: 1;
-
-  top: 40vh;
-  // bottom: -50vh;
-  // }
-  // @media (max-width: $to-small) {
-  // top: -15vh;
-  // bottom: 0;
-  // }
-
-  // @media (min-width: $from-medium) and (max-width: $to-large) {
-  //     margin-top: rem(100px);
-  // }
-
-  // @media (min-width: $from-large) {
-  //     margin-top: rem(300px);
-  // }
+  z-index: 101;
 }
 
 .c-direction-block_item {
@@ -220,6 +208,12 @@
   white-space: nowrap;
   text-transform: uppercase;
   line-height: 1;
+  z-index: 101;
+  overflow: hidden;
+
+  @media screen and (max-width: 767px) {
+    @include toRem(font-size, 40);
+  }
 
   span {
     display: block;
@@ -227,16 +221,26 @@
     white-space: nowrap;
     padding: 8px;
     background-color: yellow;
+    z-index: 101;
+    width: 110vw;
   }
 
   &.-one {
     top: 33%;
     transform-origin: center center;
-    transform: translateX(-75vw) rotate(6deg);
+    transform: translateX(-7.5%) rotate(6deg);
+
+    @media screen and (max-width: 767px) {
+      transform: translateX(-12.5%) rotate(6deg);
+    }
   }
-  &.-four {
+  &.-two {
     top: 68%;
-    transform-origin: center center;
-    transform: translateX(-75vw) rotate(-6deg);
+    transform-origin: center;
+    transform: translateX(-7.5%) rotate(-6deg);
+
+    @media screen and (max-width: 767px) {
+      transform: translateX(-12.5%) rotate(-6deg);
+    }
   }
 }

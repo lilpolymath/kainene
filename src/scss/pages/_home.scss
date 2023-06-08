@@ -1,0 +1,7 @@
+.home {
+  font-size: 4rem;
+
+  @media screen and (max-width: 540px) {
+    font-size: 8rem;
+  }
+}

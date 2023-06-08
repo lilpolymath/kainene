@@ -1,16 +1,15 @@
-@import "utils/breakpoints";
-@import "utils/functions";
-@import "utils/mixins";
+@import 'utils/breakpoints';
+@import 'utils/functions';
+@import 'utils/mixins';
 
-@import "core/reset";
-@import "core/variables";
-@import "core/fonts";
-@import "core/globals";
+@import 'core/reset';
+@import 'core/variables';
+@import 'core/fonts';
+@import 'core/globals';
 
-@import "shared/fonts";
-@import "shared/links";
-@import "shared/layout";
+@import 'shared/links';
+@import 'shared/layout';
 
-@import "components/nav";
+@import 'components/nav';
 
-@import "pages/home";
+@import 'pages/home';

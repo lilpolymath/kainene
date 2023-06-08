@@ -10,5 +10,13 @@ html {
 
 // resets
 body {
+  @include toRem(padding-top, 60);
+  @include toRem(padding-bottom, 60);
+  @include toRem(padding-left, 50);
+  @include toRem(padding-right, 50);
+
   font-family: 'Aveonik', sans-serif;
+  background-color: #000000;
+  color: #ffffff;
+  position: relative;
 }

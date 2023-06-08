@@ -47,9 +47,25 @@
     @content;
   }
 
-  @include media(">tablet") {
+  @include media('>tablet') {
     @content;
   }
+}
+
+@mixin toRem($property, $value) {
+  #{$property}: calc($value / 7.5) * 1rem;
+
+  @supports not (width: calc(#{$value} * 1px)) {
+    #{$property}: #{$value}px;
+  }
+
+  // @media (max-width: 767px) {
+  //   #{$property}: calc($value / 7.5) * 1.625rem;
+
+  //   @supports not (width: calc(#{$value} * 1px)) {
+  //     #{$property}: #{$value}px;
+  //   }
+  // }
 }
 
 @mixin ratio($height, $width) {
@@ -60,7 +76,7 @@
 
   @supports not (aspect-ratio: calc($width / $height)) {
     &:after {
-      content: "";
+      content: '';
       display: inline-block;
       padding-top: calc($height / $width) * 100%;
       width: 100%;

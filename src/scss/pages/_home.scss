@@ -3,7 +3,6 @@
   @include toRem(padding-left, 50);
   @include toRem(padding-right, 50);
 
-  // min-height: 90vh;
   @include toRem(margin-top, 100);
   @include toRem(margin-bottom, 40);
 
@@ -20,8 +19,8 @@
     @include toRem(font-size, 32);
     @include toRem(padding-left, 32);
     @include toRem(padding-right, 32);
-    // @include toRem(margin-top, 50);
     @include toRem(margin-bottom, 50);
+    gap: 0;
 
     flex-direction: column-reverse;
   }
@@ -83,8 +82,8 @@
       @include toRem(font-size, 17);
     }
 
-    &:hover {
-      &::after {
+    @media (hover: hover) {
+      &:hover:after {
         transform: translate(0);
       }
     }
@@ -191,10 +190,15 @@
         background-color: yellow;
       }
 
-      &--active,
-      &:hover {
+      &--active {
         &::after {
           transform: translate(-10px, 12px);
+        }
+      }
+
+      @media (hover: hover) {
+        &:hover:after {
+          transform: translate(0);
         }
       }
     }
@@ -204,6 +208,10 @@
     height: 100%;
     width: 100%;
     border: 1px solid #ffffff;
+
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
   }
 }
 

@@ -4,11 +4,13 @@
   @include toRem(padding-right, 50);
 
   @media screen and (max-width: 767px) {
+    @include toRem(font-size, 32);
     @include toRem(padding-left, 32);
     @include toRem(padding-right, 32);
   }
 
   .hero {
+    height: 200vh;
   }
 }
 
@@ -17,25 +19,27 @@
   @include toRem(width, 50);
 
   @media screen and (max-width: 767px) {
-    @include toRem(font-size, 32);
+    @include toRem(width, 32);
   }
 
   position: fixed;
   height: 100%;
   top: 0px;
+  z-index: 100;
 }
 
 .top {
   @include toRem(height, 60);
 
   @media screen and (max-width: 767px) {
-    @include toRem(font-size, 32);
+    @include toRem(height, 40);
   }
 
   position: fixed;
   width: 100%;
   top: 0px;
   left: 0;
+  background-color: black;
   border-bottom: 1px solid #d9d9d9;
 }
 
@@ -45,7 +49,6 @@
 }
 
 .right {
-  z-index: 100;
   right: 0px;
   border-left: 1px solid #d9d9d9;
 }

@@ -103,14 +103,15 @@
     align-items: center;
     @include toRem(padding-left, 50);
     @include toRem(padding-right, 50);
-    // @include toRem(margin-top, 200);
+    @include toRem(margin-top, 160);
+    @include toRem(margin-bottom, 160);
     @include toRem(gap, 32);
 
     @media screen and (max-width: 767px) {
       flex-direction: column;
       @include toRem(padding-left, 32);
       @include toRem(padding-right, 32);
-      // @include toRem(margin-top, 100);
+      @include toRem(margin-top, 80);
     }
 
     > * {
@@ -129,23 +130,27 @@
     @include spaceToRem(gap, 40, 32);
 
     .case {
-      display: block;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
       text-align: left;
       position: relative;
       background: #000000;
       color: #ffffff;
       border: 1px solid #ffffff;
       cursor: pointer;
-
-      @include spaceToRem(padding, 32, 24);
+      gap: 48px;
+      padding: 32px 24px;
 
       h4 {
         @include toRem(font-size, 21);
+        font-size: 21px;
         margin-bottom: 24px;
       }
 
       p {
-        @include toRem(font-size, 15);
+        @include toRem(font-size, 16);
+        font-size: 16px;
       }
 
       i {
@@ -154,7 +159,6 @@
         width: fit-content;
         margin-left: auto;
         @include toRem(font-size, 32);
-        @include toRem(margin-top, 48);
       }
 
       &::after {
@@ -189,16 +193,11 @@
 }
 
 .usecase__text {
-  height: 40vh;
   z-index: 101;
   position: relative;
-  // overflow: hidden;
 }
 
 .c-direction-block {
-  position: absolute;
-  right: 0;
-  left: 0;
   z-index: 101;
 }
 
@@ -226,7 +225,6 @@
   }
 
   &.-one {
-    top: 33%;
     transform-origin: center center;
     transform: translateX(-7.5%) rotate(6deg);
 
@@ -235,7 +233,6 @@
     }
   }
   &.-two {
-    top: 68%;
     transform-origin: center;
     transform: translateX(-7.5%) rotate(-6deg);
 

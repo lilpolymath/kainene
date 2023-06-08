@@ -1,10 +1,8 @@
-import initSmoothScrolling from './smooth-scoll';
-
+import LocomotiveScroll from 'locomotive-scroll';
+import { gsap } from 'gsap';
 // initSmoothScrolling();
 
 console.log("Hey! Let's build.");
-
-import LocomotiveScroll from 'locomotive-scroll';
 
 const scroll = new LocomotiveScroll({
   el: document.querySelector('[data-scroll-container]'),

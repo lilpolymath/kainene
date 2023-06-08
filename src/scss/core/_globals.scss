@@ -8,22 +8,16 @@ html {
   }
 }
 
-// resets
 body {
-  @include toRem(padding-top, 60);
-  @include toRem(padding-bottom, 60);
-  @include toRem(padding-left, 50);
-  @include toRem(padding-right, 50);
+  @include spaceToRem(padding, 60, 50);
 
   @media screen and (max-width: 767px) {
-    @include toRem(padding-top, 40);
-    @include toRem(padding-bottom, 40);
-    @include toRem(padding-left, 32);
-    @include toRem(padding-right, 32);
+    @include spaceToRem(padding, 40, 32);
   }
 
   font-family: 'Aveonik', sans-serif;
   background-color: #000000;
   color: #ffffff;
   position: relative;
+  min-height: 100vh;
 }

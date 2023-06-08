@@ -1,5 +1,5 @@
 import initSmoothScrolling from './smooth-scoll';
 
-initSmoothScrolling();
+// initSmoothScrolling();
 
 console.log("Hey! Let's build.");

@@ -5,39 +5,164 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kainene vos Savant</title>
     <link rel="stylesheet" href="scss/index.scss" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css"
+    /> -->
   </head>
 
   <body>
     <div class="left"></div>
     <div class="right"></div>
     <div class="top"></div>
+    <div class="bottom"></div>
 
-    <main class="hero grid">
-      <div class="hero__content">
-        <h1>
-          Hey there!<br />
-          I am Kainene vos Savant.
-        </h1>
-        <p>
-          As you read this, I'm helping over 10,000 people write compelling
-          essays, emails, research papers, project reports, works of fiction,
-          poetry, music, jokes, presentations, study plans — you name it.
-        </p>
-        <p>
-          And I’m not just great at being your secret weapon for blazing through
-          mountains of work: I’m also a great conversationalist, thinker and
-          friend. Don’t take my word for it, though.
-        </p>
-
-        <button class="hero__button">Talk to me on Telegram</button>
+    <main data-scroll-container>
+      <!-- <div class="section" data-scroll-section>
+        <div>
+          <h1 data-scroll>Hey</h1>
+          <p
+            data-scroll
+            data-scroll-direction="horizontal"
+            data-scroll-speed="12"
+            style="margin-left: 20vw"
+          >
+            👋
+          </p>
+        </div>
       </div>
+      <div class="section" data-scroll-section>
+        <div>
+          <h2 data-scroll data-scroll-speed="1">Looks like rain</h2>
+          <p data-scroll data-scroll-speed="4">🌧</p>
+        </div>
+      </div> -->
 
-      <figure class="hero__image">
-        <img src="images/hero.png" alt="Kainene vos Savant" />
-      </figure>
+      <section class="hero" data-scroll-section>
+        <div class="hero__content" data-scroll-speed="4" data-scroll>
+          <h1>
+            Hey there!<br />
+            I am Kainene vos Savant.
+          </h1>
+          <p>
+            As you read this, I'm helping over 10,000 people write compelling
+            essays, emails, research papers, project reports, works of fiction,
+            poetry, music, jokes, presentations, study plans — you name it.
+          </p>
+          <p>
+            And I’m not just great at being your secret weapon for blazing
+            through mountains of work: I’m also a great conversationalist,
+            thinker and friend. Don’t take my word for it, though.
+          </p>
+
+          <button class="hero__button">Talk to me on Telegram</button>
+        </div>
+
+        <figure class="hero__image" data-scroll data-scroll-speed="3">
+          <img src="images/hero.png" alt="Kainene vos Savant" />
+        </figure>
+      </section>
+
+      <section class="usecase__text" data-scroll-section>
+        <section class="c-section" data-scroll-section>
+          <div class="o-container" id="scroll-direction">
+            <div class="c-direction-block_wrapper">
+              <div class="c-direction-block" id="direction">
+                <div class="c-direction-block_item -one">
+                  <span
+                    class="c-direction-block_item_inner"
+                    data-scroll
+                    data-scroll-direction="horizontal"
+                    data-scroll-speed="6"
+                  >
+                    USE CASES · USE CASE · USE CASES · USE CASES · USE CASE ·
+                    USE CASES · USE CASES
+                  </span>
+                </div>
+
+                <div class="c-direction-block_item -four">
+                  <span
+                    class="c-direction-block_item_inner"
+                    data-scroll
+                    data-scroll-direction="horizontal"
+                    data-scroll-speed="6"
+                  >
+                    USE CASES · USE CASE · USE CASES · USE CASES · USE CASE ·
+                    USE CASES · USE CASES
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <section class="usecase" data-scroll-section>
+        <div class="usecase__content" data-scroll-section>
+          <div class="cases">
+            <button class="case case--active">
+              <h4>Study Buddy</h4>
+              <p>
+                For example: say 'explain P=NP like I'm five', and watch her
+                break it down like a champ!
+              </p>
+
+              <i class="ph-thin ph-student"></i>
+            </button>
+            <div class="case">
+              <h4>Text summarization</h4>
+              <p>
+                For example: say 'explain P=NP like I'm five', and watch her
+                break it down like a champ!
+              </p>
+
+              <i class="ph-thin ph-file-archive"></i>
+            </div>
+            <div class="case">
+              <h4>Research Assistant</h4>
+              <p>
+                Example ask: 'Kainene, how can I position my cosmetic brand for
+                top SEO results?'
+              </p>
+
+              <i class="ph-thin ph-magnifying-glass"></i>
+            </div>
+            <div class="case">
+              <h4>Philosophy</h4>
+              <p>
+                Sometimes, you just want someone you can kick back with and ask,
+                'maaaaaaaan, what's life all about?'
+              </p>
+
+              <i class="ph-thin ph-brain"></i>
+            </div>
+            <div class="case">
+              <h4>Dissing your opps</h4>
+              <p>
+                All in good fun, of course — Kainene is morally opposed to
+                violence and hate speech.
+              </p>
+
+              <i class="ph-thin ph-smiley-x-eyes"></i>
+            </div>
+            <div class="case">
+              <h4>Pidgin fun</h4>
+              <p>
+                Unto say, sometimes e dey funny say computer dey follow you yarn
+                pidgin. Olo'un we ouchea.
+              </p>
+
+              <i class="ph-thin ph-translate"></i>
+            </div>
+          </div>
+
+          <figure class="usecase__preview">
+            <!-- <img src="" alt="" /> -->
+          </figure>
+        </div>
+      </section>
     </main>
-
-    <footer class="footer"></footer>
 
     <script src="js/index.js" type="module"></script>
   </body>

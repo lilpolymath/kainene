@@ -6,6 +6,14 @@ html {
   @media (max-width: 767px) {
     font-size: calc(100vw / 750 * 10);
   }
+
+  // @media (min-width: 2340px) {
+  //   font-size: calc(100vw / 2780 * 10);
+  // }
+
+  @media (min-width: 3420px) {
+    font-size: calc(100vw / 2780 * 10);
+  }
 }
 
 body {

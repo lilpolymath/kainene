@@ -21,8 +21,9 @@
     "sass": "^1.26.8"
   },
   "dependencies": {
+    "@studio-freight/lenis": "^1.0.12",
     "gsap": "^3.7.1",
-    "webfontloader": "^1.6.28",
-    "@studio-freight/lenis": "^1.0.12"
+    "locomotive-scroll": "^4.1.4",
+    "webfontloader": "^1.6.28"
   }
 }

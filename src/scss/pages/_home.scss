@@ -4,25 +4,28 @@
   @include toRem(padding-right, 50);
 
   height: 100%;
-  align-items: center;
-  min-height: calc(100vh - 16rem);
   @include toRem(margin-top, 120);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 32px;
+
+  > * {
+    flex: 1;
+  }
 
   @media screen and (max-width: 767px) {
     @include toRem(font-size, 32);
     @include toRem(padding-left, 32);
     @include toRem(padding-right, 32);
+    @include toRem(margin-top, 60);
 
-    min-height: calc(100vh - 10.666rem);
-
-    display: flex;
-    align-items: center;
     flex-direction: column-reverse;
+    gap: 64px;
   }
 
   &__content {
-    grid-column: 1 / span 6;
-
     h1 {
       @include toRem(font-size, 48);
       @include toRem(margin-bottom, 30);
@@ -34,7 +37,6 @@
 
     p {
       @include toRem(font-size, 16);
-      font-weight: 500;
 
       + p {
         @include toRem(margin-top, 16);
@@ -43,7 +45,6 @@
   }
 
   &__image {
-    grid-column: 7 / span 6;
     position: relative;
 
     img {
@@ -62,13 +63,13 @@
   }
 
   &__button {
+    color: #ffffff;
     position: relative;
     background: #0f0f0f;
-    color: #ffffff;
     font-family: 'Merriweather';
     border: 1px solid #ffffff;
     @include toRem(font-size, 14);
-    @include toRem(margin-top, 30);
+    margin-top: 30px;
     @include spaceToRem(padding, 14, 20);
     cursor: pointer;
 
@@ -86,11 +87,156 @@
       height: 100%;
       left: 0;
       top: 0;
-      transform: translate(-0.75rem, 0.75rem);
+      transform: translate(-6px, 6px);
       will-change: transform;
       transition: transform 0.25s ease-in-out;
       z-index: -1;
       background-color: yellow;
     }
+  }
+}
+
+.usecase {
+  &__content {
+    display: flex;
+    align-items: center;
+    @include toRem(padding-left, 50);
+    @include toRem(padding-right, 50);
+    @include toRem(margin-top, 200);
+    @include toRem(gap, 32);
+
+    @media screen and (max-width: 767px) {
+      flex-direction: column;
+      @include toRem(padding-left, 32);
+      @include toRem(padding-right, 32);
+      @include toRem(margin-top, 100);
+    }
+
+    > * {
+      flex: 1;
+    }
+  }
+
+  .cases {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    @media screen and (max-width: 767px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    @include spaceToRem(gap, 40, 32);
+
+    .case {
+      display: block;
+      text-align: left;
+      position: relative;
+      background: #000000;
+      color: #ffffff;
+      border: 1px solid #ffffff;
+      cursor: pointer;
+
+      @include spaceToRem(padding, 32, 24);
+
+      h4 {
+        @include toRem(font-size, 21);
+        margin-bottom: 24px;
+      }
+
+      p {
+        @include toRem(font-size, 15);
+      }
+
+      i {
+        color: #ffffff;
+        display: block;
+        width: fit-content;
+        margin-left: auto;
+        @include toRem(font-size, 32);
+        @include toRem(margin-top, 48);
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        transform: translate(0);
+        will-change: transform;
+        transition: transform 0.25s ease-in-out;
+        z-index: -1;
+        background-color: yellow;
+      }
+
+      &--active,
+      &:hover {
+        &::after {
+          transform: translate(-10px, 12px);
+        }
+      }
+    }
+  }
+
+  &__preview {
+    height: 100%;
+    width: 100%;
+    border: 1px solid #ffffff;
+  }
+}
+
+.usecase__text {
+  height: 40vh;
+}
+
+.c-direction-block {
+  position: absolute;
+  right: 0;
+  left: 0;
+  z-index: 1;
+
+  top: 40vh;
+  // bottom: -50vh;
+  // }
+  // @media (max-width: $to-small) {
+  // top: -15vh;
+  // bottom: 0;
+  // }
+
+  // @media (min-width: $from-medium) and (max-width: $to-large) {
+  //     margin-top: rem(100px);
+  // }
+
+  // @media (min-width: $from-large) {
+  //     margin-top: rem(300px);
+  // }
+}
+
+.c-direction-block_item {
+  position: absolute;
+  @include toRem(font-size, 80);
+  white-space: nowrap;
+  text-transform: uppercase;
+  line-height: 1;
+
+  span {
+    display: block;
+    color: #000000;
+    white-space: nowrap;
+    padding: 8px;
+    background-color: yellow;
+  }
+
+  &.-one {
+    top: 33%;
+    transform-origin: center center;
+    transform: translateX(-75vw) rotate(6deg);
+  }
+  &.-four {
+    top: 68%;
+    transform-origin: center center;
+    transform: translateX(-75vw) rotate(-6deg);
   }
 }

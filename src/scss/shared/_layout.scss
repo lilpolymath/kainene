@@ -32,13 +32,23 @@
   @include toRem(width, 50);
 
   @media screen and (max-width: 767px) {
-    @include toRem(width, 32);
+  @include toRem(width, 32);
   }
 
   position: fixed;
   height: 100%;
   top: 0px;
   z-index: 100;
+}
+
+.left {
+  left: 0px;
+  border-right: 1px solid #d9d9d9;
+}
+
+.right {
+  right: 0px;
+  border-left: 1px solid #d9d9d9;
 }
 
 .top {
@@ -57,12 +67,18 @@
   border-bottom: 1px solid #d9d9d9;
 }
 
-.left {
-  left: 0px;
-  border-right: 1px solid #d9d9d9;
-}
+.bottom {
+  @include toRem(height, 60);
 
-.right {
-  right: 0px;
-  border-left: 1px solid #d9d9d9;
+  @media screen and (max-width: 767px) {
+    @include toRem(height, 40);
+  }
+
+  position: fixed;
+  width: 100%;
+  bottom: 0px;
+  left: 0;
+  z-index: 99;
+  background-color: black;
+  border-top: 1px solid #d9d9d9;
 }

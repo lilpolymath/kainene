@@ -34,6 +34,10 @@
     p {
       @include toRem(font-size, 16);
 
+      @media screen and (max-width: 767px) {
+        @include toRem(font-size, 21);
+      }
+
       + p {
         @include toRem(margin-top, 16);
       }
@@ -106,8 +110,8 @@
 
     @media screen and (max-width: 767px) {
       flex-direction: column;
-      @include toRem(padding-left, 64);
-      @include toRem(padding-right, 64);
+      @include toRem(padding-left, 32);
+      @include toRem(padding-right, 32);
       @include toRem(margin-top, 56);
     }
 
@@ -267,8 +271,8 @@ footer {
   @include toRem(gap, 32);
 
   @media screen and (max-width: 767px) {
-    @include toRem(padding-left, 48);
-    @include toRem(padding-right, 48);
+    @include toRem(padding-left, 32);
+    @include toRem(padding-right, 32);
     @include toRem(margin-top, 56);
   }
 }
@@ -305,39 +309,48 @@ footer {
       width: 100%;
       position: relative;
       cursor: pointer;
-      font-size: 1.25rem;
       @include toRem(font-size, 18);
       font-weight: 700;
       list-style: none;
       padding-right: 24px;
+
+      @media screen and (max-width: 767px) {
+        @include toRem(font-size, 22);
+      }
     }
 
     details summary:after {
       content: '+';
       color: white;
       position: absolute;
-      font-size: 1.75rem;
       @include toRem(font-size, 24);
       line-height: 0;
       margin-top: 0.75rem;
       right: 0;
       top: 0;
-      font-weight: 200;
+      font-weight: 400;
       transform-origin: center;
       transition: 200ms linear;
       transform: translate(0, -50%);
     }
+
     details[open] summary:after {
       transform: rotate(45deg);
       @include toRem(font-size, 24);
     }
+
     details summary {
       outline: 0;
     }
+
     details p {
       margin: 0;
       @include toRem(font-size, 16);
       @include toRem(margin-top, 16);
+
+      @media screen and (max-width: 767px) {
+        @include toRem(font-size, 21);
+      }
     }
   }
 }
@@ -396,7 +409,10 @@ footer {
     p {
       @include toRem(margin-bottom, 32);
       @include toRem(font-size, 18);
-      @include toRem(line-height, 25);
+
+      @media screen and (max-width: 767px) {
+        @include toRem(font-size, 22);
+      }
     }
 
     ul {
@@ -406,7 +422,10 @@ footer {
       li {
         @include toRem(margin-bottom, 32);
         @include toRem(font-size, 18);
-        @include toRem(line-height, 25);
+
+        @media screen and (max-width: 767px) {
+          @include toRem(font-size, 22);
+        }
       }
 
       strong {

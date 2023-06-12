@@ -61,7 +61,7 @@
     </section>
 
     <section class="usecase" data-scroll-section>
-      <div class="usecase__content" data-scroll data-scroll-speed="1">
+      <div class="section__content" data-scroll data-scroll-speed="1">
         <div class="cases">
           <button class="case case--active">
             <div>
@@ -137,7 +137,95 @@
       </div>
     </section>
 
-    <section class="pricing"></section>
+    <section class="pricing" data-scroll-section>
+      <div class="section__content">
+        <div class="pricing__text section__text">
+          <h2>Pricing</h2>
+          <p>
+            Kainene vos Savant comes with a three day trial, after which
+            continued usage comes at a N1,000-per-month subscription.
+          </p>
+          <p>
+            If you have an OpenAI API key, you can use Kainene vos Savant
+            without a subscription.
+          </p>
+          <ul>
+            <li>
+              Text Kainene vos Savant with <strong>`/addkey yourapikey`</strong>
+            </li>
+            <li>
+              <strong>`yourapikey`</strong> is your OpenAI API key, which you'll
+              find in the settings page of your OpenAI account. It typically
+              starts with sk-***************.
+            </li>
+          </ul>
+        </div>
+
+        <figure class="pricing__image section__image">
+          <img src="./images/pricing.png" alt="pricing" />
+        </figure>
+      </div>
+    </section>
+
+    <section class="faq" data-scroll-section>
+      <div class="section__content" data-scroll data-scroll-speed="1">
+        <div class="faq__text section__text">
+          <h2>FAQs</h2>
+          <p>
+            These are honest-to-God questions people have asked about Kainene,
+            reproduced here in the interest of cutting down redundancy.
+          </p>
+        </div>
+        <div class="faq__content">
+          <details>
+            <summary>What is Kainene?</summary>
+            <p>
+              Named after Marylyn vos Savant, Kainene is an AI-powered assistant
+              running on Telegram. Ask questions — and if they be within the
+              realm of knowledge — she will answer. Kainene is powered by a GPT
+              model from OpenAI. I've only done minimal training, so the true
+              genius here is the team at OpenAI. I'm just the guy writing code
+              to make it accessible to laypeople like me.
+            </p>
+          </details>
+          <details>
+            <summary>Can you read my conversations with Kainene? 🤨</summary>
+            <p>
+              No, thank God. Great lengths have been taken to encrypt your
+              conversations. Whatever you discuss with Kainene is between you
+              and OpenAI.
+            </p>
+          </details>
+          <details>
+            <summary>Can you see my submitted API key?</summary>
+            <p>
+              Also no. Your API keys are encrypted at the point of storage and
+              only decrypted at the point of making the request to OpenAI.
+            </p>
+          </details>
+          <details>
+            <summary>
+              I don't believe Kainene's an AI model at all. I believe you've
+              imprisoned a couple hundred interns in a remote location and
+              they're the ones servicing all our queries.
+            </summary>
+            <p>And your question was?</p>
+          </details>
+          <details>
+            <summary>
+              Is this Kainene's final form? Should we expect more features?
+            </summary>
+            <p>You bet! We're just getting started. Stick with me.</p>
+          </details>
+          <details>
+            <summary>Why are you such a sweet lad?</summary>
+            <p>Na so God plan am.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer" data-scroll-section></footer>
 
     <script src="js/index.js" type="module"></script>
   </body>

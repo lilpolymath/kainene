@@ -64,9 +64,10 @@
     background: #0f0f0f;
     font-family: 'Merriweather';
     border: 1px solid #ffffff;
+    @include toRem(margin-top, 30);
     @include toRem(font-size, 14);
-    margin-top: 30px;
-
+    @include toRem(--space, -6);
+    @include toRem(--space-abs, 6);
     @include spaceToRem(padding, 14, 20);
     cursor: pointer;
 
@@ -84,7 +85,7 @@
       height: 100%;
       left: 0;
       top: 0;
-      transform: translate(-6px, 6px);
+      transform: translate(var(--space), var(--space-abs));
       will-change: transform;
       transition: transform 0.25s ease-in-out;
       z-index: -1;
@@ -99,14 +100,14 @@
     align-items: center;
     @include toRem(padding-left, 50);
     @include toRem(padding-right, 50);
-    @include toRem(margin-top, 160);
-    @include toRem(margin-bottom, 160);
+    @include toRem(margin-top, 240);
+    @include toRem(margin-bottom, 240);
     @include toRem(gap, 32);
 
     @media screen and (max-width: 767px) {
       flex-direction: column;
-      @include toRem(padding-left, 32);
-      @include toRem(padding-right, 32);
+      @include toRem(padding-left, 64);
+      @include toRem(padding-right, 64);
       @include toRem(margin-top, 80);
     }
 
@@ -137,6 +138,8 @@
       cursor: pointer;
       gap: 48px;
       padding: 32px 24px;
+      @include toRem(--x, -10);
+      @include toRem(--y, 12);
 
       h4 {
         @include toRem(font-size, 21);
@@ -181,6 +184,7 @@
       &--active {
         &::after {
           transform: translate(-10px, 12px);
+          transform: translate(var(--x), var(--y));
         }
       }
 
@@ -249,6 +253,170 @@
 
     @media screen and (max-width: 767px) {
       transform: translateX(-12.5%) rotate(-6deg);
+    }
+  }
+}
+
+.pricing,
+.faq {
+  @include toRem(padding-left, 50);
+  @include toRem(padding-right, 50);
+  @include toRem(margin-top, 240);
+  @include toRem(margin-bottom, 240);
+  @include toRem(gap, 32);
+
+  @media screen and (max-width: 767px) {
+    @include toRem(padding-left, 48);
+    @include toRem(padding-right, 48);
+    @include toRem(margin-top, 80);
+  }
+}
+
+.faq {
+  &__content {
+    details[open] summary ~ * {
+      animation: open 0.3s ease-in-out none;
+    }
+
+    details {
+      border-top: 1px solid white;
+      @include spaceToRem(padding, 32, 24);
+      overflow: hidden;
+
+      &:last-child {
+        border-bottom: 1px solid white;
+      }
+    }
+
+    @keyframes open {
+      0% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    details summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details summary {
+      width: 100%;
+      position: relative;
+      cursor: pointer;
+      font-size: 1.25rem;
+      @include toRem(font-size, 18);
+      font-weight: 700;
+      list-style: none;
+      padding-right: 24px;
+    }
+
+    details summary:after {
+      content: '+';
+      color: white;
+      position: absolute;
+      font-size: 1.75rem;
+      @include toRem(font-size, 24);
+      line-height: 0;
+      margin-top: 0.75rem;
+      right: 0;
+      top: 0;
+      height: 100%;
+      font-weight: 200;
+      transform-origin: center;
+      transition: 200ms linear;
+      transform: translate(40%, 50%);
+    }
+    details[open] summary:after {
+      transform: rotate(45deg);
+      @include toRem(font-size, 24);
+    }
+    details summary {
+      outline: 0;
+    }
+    details p {
+      margin: 0;
+      @include toRem(font-size, 16);
+      @include toRem(margin-top, 16);
+    }
+  }
+}
+
+.footer {
+}
+
+.section {
+  &__content {
+    display: flex;
+    @include toRem(padding-left, 50);
+    @include toRem(padding-right, 50);
+    @include toRem(margin-top, 240);
+    @include toRem(margin-bottom, 240);
+    @include toRem(gap, 32);
+
+    @media screen and (max-width: 767px) {
+      @include toRem(padding-left, 48);
+      @include toRem(padding-right, 48);
+      @include toRem(margin-top, 80);
+    }
+
+    @media screen and (max-width: 767px) {
+      flex-direction: column;
+    }
+
+    > * {
+      flex: 1;
+    }
+  }
+
+  &__text {
+    h2 {
+      font-family: 'Merriweather';
+      font-weight: 700;
+      color: #ffff00;
+      @include toRem(margin-bottom, 32);
+      @include toRem(font-size, 48);
+      @include toRem(line-height, 60);
+    }
+
+    p {
+      @include toRem(margin-bottom, 32);
+      @include toRem(font-size, 18);
+      @include toRem(line-height, 25);
+    }
+
+    ul {
+      list-style: disc;
+      @include toRem(padding-inline-start, 25);
+
+      li {
+        @include toRem(margin-bottom, 32);
+        @include toRem(font-size, 18);
+        @include toRem(line-height, 25);
+      }
+
+      strong {
+        color: #ffff00;
+        font-weight: 700;
+      }
+    }
+  }
+
+  &__image {
+    position: relative;
+
+    img {
+      width: 100%;
+      @include toRem(max-width, 400);
+      @include toRem(max-height, 400);
+      margin: auto;
+      display: block;
+      position: relative;
+
+      @media screen and (max-width: 767px) {
+        @include toRem(width, 250);
+        @include toRem(height, 250);
+      }
     }
   }
 }

@@ -258,11 +258,12 @@
 }
 
 .pricing,
-.faq {
+.faq,
+.usecase,
+footer {
   @include toRem(padding-left, 50);
   @include toRem(padding-right, 50);
   @include toRem(margin-top, 240);
-  @include toRem(margin-bottom, 240);
   @include toRem(gap, 32);
 
   @media screen and (max-width: 767px) {
@@ -342,25 +343,40 @@
   }
 }
 
-.footer {
+footer {
+  display: flex;
+  flex-direction: column;
+
+  a {
+    @extend %link;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    @include toRem(gap, 40);
+    @include toRem(margin-top, 96);
+    @include toRem(margin-bottom, 96);
+    @include toRem(font-size, 20);
+    @include toRem(line-height, 25);
+
+    @media screen and (max-width: 767px) {
+      justify-content: flex-start;
+    }
+  }
 }
 
 .section {
   &__content {
     display: flex;
-    @include toRem(padding-left, 50);
-    @include toRem(padding-right, 50);
     @include toRem(margin-top, 240);
     @include toRem(margin-bottom, 240);
     @include toRem(gap, 32);
 
     @media screen and (max-width: 767px) {
-      @include toRem(padding-left, 48);
-      @include toRem(padding-right, 48);
       @include toRem(margin-top, 80);
-    }
-
-    @media screen and (max-width: 767px) {
       flex-direction: column;
     }
 

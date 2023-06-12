@@ -11,7 +11,8 @@
   <body data-scroll-container>
     <div class="left"></div>
     <div class="right"></div>
-    <div class="top"></div>
+    <!-- <div class="top"></div> -->
+    <!-- <div class="bottom"></div> -->
 
     <section class="hero" data-scroll-section>
       <div class="hero__content" data-scroll-speed="4" data-scroll>
@@ -139,7 +140,11 @@
 
     <section class="pricing" data-scroll-section>
       <div class="section__content">
-        <div class="pricing__text section__text">
+        <div
+          class="pricing__text section__text"
+          data-scroll-speed="3"
+          data-scroll
+        >
           <h2>Pricing</h2>
           <p>
             Kainene vos Savant comes with a three day trial, after which
@@ -161,22 +166,26 @@
           </ul>
         </div>
 
-        <figure class="pricing__image section__image">
+        <figure
+          class="pricing__image section__image"
+          data-scroll-speed="2"
+          data-scroll
+        >
           <img src="./images/pricing.png" alt="pricing" />
         </figure>
       </div>
     </section>
 
     <section class="faq" data-scroll-section>
-      <div class="section__content" data-scroll data-scroll-speed="1">
-        <div class="faq__text section__text">
+      <div class="section__content">
+        <div class="faq__text section__text" data-scroll-speed="2" data-scroll>
           <h2>FAQs</h2>
           <p>
             These are honest-to-God questions people have asked about Kainene,
             reproduced here in the interest of cutting down redundancy.
           </p>
         </div>
-        <div class="faq__content">
+        <div class="faq__content" data-scroll-speed="3" data-scroll>
           <details>
             <summary>What is Kainene?</summary>
             <p>
@@ -225,7 +234,63 @@
       </div>
     </section>
 
-    <footer class="footer" data-scroll-section></footer>
+    <footer data-scroll-section>
+      <figure class="section__image">
+        <img src="./images/footer.png" alt="footer" />
+      </figure>
+
+      <div class="content" data-scroll-speed="2" data-scroll>
+        <div>
+          <p>
+            Email:
+            <a href="mailto:justin.irabor@gmail.com">justin.irabor@gmail.com</a>
+          </p>
+          <p>
+            Twitter:
+            <a
+              href="https://twitter.com/lifeofmogwai"
+              target="_blank"
+              rel="noopener noreferrer"
+              >@lifeofmogwai
+            </a>
+            or
+            <a
+              href="https://twitter.com/thevunderkind"
+              target="_blank"
+              rel="noopener noreferrer"
+              >@thevunderkind
+            </a>
+          </p>
+          <p>
+            Parent company:
+            <a
+              href="https://holeyfox.co"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              holeyfox</a
+            >
+          </p>
+        </div>
+        <div>
+          <p>
+            Dev & Design by
+            <a
+              href="https://twitter.com/favourcodes"
+              target="_blank"
+              rel="noopener noreferrer"
+              >@favourcodes
+            </a>
+          </p>
+          <a
+            href="https://absurd.design/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Illustration(s) from absurd.design.</a
+          >
+        </div>
+      </div>
+    </footer>
 
     <script src="js/index.js" type="module"></script>
   </body>

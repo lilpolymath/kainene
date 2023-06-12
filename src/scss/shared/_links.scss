@@ -7,10 +7,10 @@
 
 %link__line {
   // @media (any-pointer: fine) {
-  background: currentColor;
+  background: yellow;
   bottom: 0;
-  content: "";
-  height: 1px;
+  content: '';
+  height: 2px;
   left: 0;
   position: absolute;
   transition: transform 0.7s $ease-out-expo;

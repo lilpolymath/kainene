@@ -100,15 +100,15 @@
     align-items: center;
     @include toRem(padding-left, 50);
     @include toRem(padding-right, 50);
-    @include toRem(margin-top, 240);
-    @include toRem(margin-bottom, 240);
+    @include toRem(margin-top, 160);
+    @include toRem(margin-bottom, 160);
     @include toRem(gap, 32);
 
     @media screen and (max-width: 767px) {
       flex-direction: column;
       @include toRem(padding-left, 64);
       @include toRem(padding-right, 64);
-      @include toRem(margin-top, 80);
+      @include toRem(margin-top, 56);
     }
 
     > * {
@@ -263,13 +263,13 @@
 footer {
   @include toRem(padding-left, 50);
   @include toRem(padding-right, 50);
-  @include toRem(margin-top, 240);
+  @include toRem(margin-top, 160);
   @include toRem(gap, 32);
 
   @media screen and (max-width: 767px) {
     @include toRem(padding-left, 48);
     @include toRem(padding-right, 48);
-    @include toRem(margin-top, 80);
+    @include toRem(margin-top, 56);
   }
 }
 
@@ -322,11 +322,10 @@ footer {
       margin-top: 0.75rem;
       right: 0;
       top: 0;
-      height: 100%;
       font-weight: 200;
       transform-origin: center;
       transition: 200ms linear;
-      transform: translate(40%, 50%);
+      transform: translate(0, -50%);
     }
     details[open] summary:after {
       transform: rotate(45deg);
@@ -357,7 +356,6 @@ footer {
     justify-content: center;
     flex-wrap: wrap;
     @include toRem(gap, 40);
-    @include toRem(margin-top, 96);
     @include toRem(margin-bottom, 96);
     @include toRem(font-size, 20);
     @include toRem(line-height, 25);
@@ -371,12 +369,12 @@ footer {
 .section {
   &__content {
     display: flex;
-    @include toRem(margin-top, 240);
-    @include toRem(margin-bottom, 240);
+    @include toRem(margin-top, 160);
+    @include toRem(margin-bottom, 160);
     @include toRem(gap, 32);
 
     @media screen and (max-width: 767px) {
-      @include toRem(margin-top, 80);
+      @include toRem(margin-top, 56);
       flex-direction: column;
     }
 
@@ -430,8 +428,8 @@ footer {
       position: relative;
 
       @media screen and (max-width: 767px) {
-        @include toRem(width, 250);
-        @include toRem(height, 250);
+        @include toRem(width, 300);
+        @include toRem(height, 300);
       }
     }
   }

@@ -10,7 +10,7 @@
   background: yellow;
   bottom: 0;
   content: '';
-  height: 2px;
+  @include toRem(height, 2);
   left: 0;
   position: absolute;
   transition: transform 0.7s $ease-out-expo;

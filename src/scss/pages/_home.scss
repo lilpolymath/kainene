@@ -186,9 +186,11 @@
       }
 
       &--active {
-        &::after {
-          transform: translate(-10px, 12px);
-          transform: translate(var(--x), var(--y));
+        @media screen and (min-width: 767px) {
+          &::after {
+            transform: translate(-10px, 12px);
+            transform: translate(var(--x), var(--y));
+          }
         }
       }
 

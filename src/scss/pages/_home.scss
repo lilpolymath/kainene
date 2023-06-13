@@ -194,19 +194,27 @@
 
       @media (hover: hover) {
         &:hover:after {
-          transform: translate(0);
+          transform: translate(-10px, 12px);
+          transform: translate(var(--x), var(--y));
         }
       }
     }
   }
 
   &__preview {
-    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    border: 1px solid #ffffff;
 
     @media screen and (max-width: 767px) {
       display: none;
+    }
+
+    img {
+      object-fit: contain;
+      width: 100%;
+      height: auto;
     }
   }
 }

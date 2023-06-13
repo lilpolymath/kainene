@@ -1,5 +1,5 @@
 import LocomotiveScroll from 'locomotive-scroll';
-import { gsap } from 'gsap';
+// import { gsap } from 'gsap';
 
 const scroll = new LocomotiveScroll({
   el: document.querySelector('[data-scroll-container]'),
@@ -28,3 +28,24 @@ setTimeout(() => {
 setTimeout(() => {
   scroll.update();
 }, 1000);
+
+const images = [
+  'https://savant.holeyfox.co/_next/image?url=%2FChatlog.png&w=640&q=75',
+  'https://savant.holeyfox.co/_next/image?url=%2Ftextsummarization.png&w=640&q=75',
+  'https://savant.holeyfox.co/_next/image?url=%2Fseo.png&w=640&q=75',
+  'https://savant.holeyfox.co/_next/image?url=%2Fmeaning.png&w=640&q=75',
+  'https://savant.holeyfox.co/_next/image?url=%2Fyomama.png&w=640&q=75',
+  'https://savant.holeyfox.co/_next/image?url=%2Flullaby.png&w=640&q=75',
+];
+const usecasePreview = document.querySelector('.usecase__preview img');
+const usecaseButtons = document.querySelectorAll('.case');
+
+usecaseButtons.forEach((button, index) => {
+  button.addEventListener('click', () => {
+    usecaseButtons.forEach((btn) => {
+      btn.classList.remove('case--active');
+    });
+    button.classList.add('case--active');
+    usecasePreview.src = `${images[index]}`;
+  });
+});

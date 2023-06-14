@@ -226,51 +226,6 @@
   position: relative;
 }
 
-.c-direction-block {
-  z-index: 101;
-}
-
-.c-direction-block_item {
-  position: absolute;
-  @include toRem(font-size, 80);
-  white-space: nowrap;
-  text-transform: uppercase;
-  line-height: 1;
-  z-index: 101;
-  overflow: hidden;
-
-  @media screen and (max-width: 767px) {
-    @include toRem(font-size, 60);
-  }
-
-  span {
-    display: block;
-    color: #000000;
-    white-space: nowrap;
-    padding: 8px;
-    background-color: yellow;
-    z-index: 101;
-    width: 110vw;
-  }
-
-  &.-one {
-    transform-origin: center center;
-    transform: translateX(-7.5%) rotate(6deg);
-
-    @media screen and (max-width: 767px) {
-      transform: translateX(-12.5%) rotate(6deg);
-    }
-  }
-  &.-two {
-    transform-origin: center;
-    transform: translateX(-7.5%) rotate(-6deg);
-
-    @media screen and (max-width: 767px) {
-      transform: translateX(-12.5%) rotate(-6deg);
-    }
-  }
-}
-
 .pricing,
 .faq,
 .usecase,
@@ -460,6 +415,111 @@ footer {
         @include toRem(width, 300);
         @include toRem(height, 300);
       }
+    }
+  }
+}
+
+.marquee {
+  text-transform: uppercase;
+  overflow: hidden;
+  width: 110vw;
+  position: absolute;
+
+  &.-one {
+    transform-origin: center;
+    transform: translateX(-7.5%) rotate(6deg);
+
+    @media screen and (max-width: 767px) {
+      transform: translateX(-12.5%) rotate(6deg);
+    }
+  }
+  &.-two {
+    transform-origin: center;
+    transform: translateX(-7.5%) rotate(-6deg);
+
+    @media screen and (max-width: 767px) {
+      transform: translateX(-12.5%) rotate(-6deg);
+    }
+  }
+
+  // &__wrap {
+  //   &:hover {
+  //     .marquee__inner {
+  //       animation-play-state: paused;
+
+  //       &:hover {
+  //         .slide-up {
+  //           transform: translateY(28%) translateX(8px);
+
+  //           &::before {
+  //             transform: translateY(0);
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
+
+  &__inner {
+    height: 100%;
+    width: fit-content;
+    align-items: center;
+    display: flex;
+    position: relative;
+    animation: marquee 12.5s linear infinite;
+    will-change: transform;
+
+    @media (prefers-reduced-motion: reduce) {
+      animation: none;
+    }
+
+    span {
+      white-space: nowrap;
+    }
+
+    .inner-span {
+      text-transform: uppercase;
+      line-height: 1;
+
+      @include toRem(font-size, 80);
+      position: relative;
+      overflow: hidden;
+      color: #000000;
+      padding: 8px;
+      white-space: nowrap;
+      background-color: yellow;
+
+      @media screen and (max-width: 767px) {
+        @include toRem(font-size, 60);
+      }
+
+      .slide-up {
+        position: absolute;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        transform: translateY(100%);
+        transition: transform 275ms ease;
+        display: none;
+
+        @media (any-pointer: fine) {
+          display: inline-block;
+        }
+
+        &::before {
+          display: inline-block;
+          content: attr(data-content);
+          white-space: nowrap;
+          transform: translateY(-100%);
+          transition: transform 275ms ease;
+        }
+      }
+    }
+  }
+
+  @keyframes marquee {
+    100% {
+      transform: translate3d(-50%, 0, 0);
     }
   }
 }
